@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 56px;
+            /* Adjust based on the height of your navbar */
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 56px;
+            /* Adjust based on the height of your navbar */
+            height: 100vh;
+            background-color: #171818;
+            padding-top: 20px;
+            color:#fff
+        }
+
+        .video-box {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .video {
+            width: 400px;
+            height: 250px;
+            /* Adjust height as needed */
+            background-color: #ddd;
+            /* Placeholder background color */
+        }
+
+        .description {
+            flex-grow: 1;
+            padding: 10px;
+        }
+        .sidebar ul li a{
+            color: #ffff;
+            border:.5px solid blue;
+            margin-top: 10px;
+        }
+        .sidebar ul li a:hover{
+            background-color: white;
+            color: rgb(0, 0, 0);
+            
+        }
+    </style>
+    <title>Sticky Side Navbar</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Your Brand</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block sidebar">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#"> More Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="course1.html">Sustainabilty on Solar power</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="course2.html">Sustainability on natural resourse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="course3.html">The Future of Sustainable Business</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="course4.html">Global Environmental Challenges</a>
+                    </li>
+                    <!-- Add more sidebar items as needed -->
+                </ul>
+            </nav>
+
+            <main role="main" class="col-md-10 ml-sm-auto">
+                <div class="container">
+                    <h1>Main Content</h1>
+                    <div class="video-box">
+                        <div class="video">
+                            <iframe width="100%" height="250" src="https://www.youtube.com/embed/your-video-id"
+                                frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div class="description">
+                            <p>you will learn from this video following topic</p>
+                            <ul>
+
+                                <li>Impact on Biodiversity
+                                    </li>
+                                <li>
+Sea Level Rise
+                                </li>
+                                <li>Melting Ice Caps and Glaciers</li>
+                                <li>Deforestation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="video-box">
+                        <div class="video">
+                            <iframe width="100%" height="250" src="https://www.youtube.com/embed/your-video-id"
+                                frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div class="description">
+                            <p>you will learn from this video following topic</p>
+                            <ul>
+
+                                <li>Greenhouse Gas Emissions</li>
+                                <li>Global Warming
+
+                                </li>
+                                <li>Carbon Footprint</li>
+                                <li>Renewable Energy Sources</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="video-box">
+                        <div class="video">
+                            <iframe width="100%" height="250" src="https://www.youtube.com/embed/your-video-id"
+                                frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div class="description">
+                            <p>you will learn from this video following topic</p>
+                            <ul>
+                                <li>]Extreme Weather Events</li>
+                                <li>
+                                    Paris Agreement</li>
+                                <li>Climate Adaptation Strategies</li>
+                                <li>Ocean Acidification</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="video-box">
+                        <div class="video">
+                            <iframe width="100%" height="250" src="https://www.youtube.com/embed/your-video-id"
+                                frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div class="description">
+                            <p>you will learn from this video following topic</p>
+                            <ul>
+
+                                <li>Sustainable Agriculture
+
+
+                                </li>
+                                <li> Carbon Capture and Storage (CCS)</li>
+                                <li>Renewable Energy Technologies</li>
+                                <li>Sustainable Transportation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="video-box">
+                        <div class="video">
+                            <iframe width="100%" height="250" src="https://www.youtube.com/embed/your-video-id"
+                                frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div class="description">
+                            <p>you will learn from this video following topic</p>
+                            <ul>
+
+                                <li>Energy Efficiency
+
+
+                                </li>
+                                <li>Circular Economy</li>
+                                <li> Climate Change and Health</li>
+                                <li>Climate Justice</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="video-box">
+                        <div class="video">
+                            <iframe width="100%" height="250" src="https://www.youtube.com/embed/your-video-id"
+                                frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div class="description">
+                            <p>you will learn from this video following topic</p>
+                            <ul>
+
+                                <li>Greenhouse Gas Emissions</li>
+                                <li>Global Warming
+
+                                </li>
+                                <li>Carbon Footprint</li>
+                                <li>Renewable Energy Sources</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="video-box">
+                        <div class="video">
+                            <iframe width="100%" height="250" src="https://www.youtube.com/embed/your-video-id"
+                                frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div class="description">
+                            <p>you will learn from this video following topic</p>
+                            <ul>
+                                <li>Environmental Policy
+                                    
+                                    
+                                   </li>
+                                <li>Carbon Trading</li>
+                                <li>Urban Heat Islands</li>
+                                <li> Climate-induced Migration</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Add more video boxes as needed -->
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

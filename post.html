@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">Community Page</a>
+    </nav>
+
+    <!-- Content Area -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+
+                <!-- Post List -->
+                <div id="postList" class="mt-4">
+                    <!-- Posts will be dynamically added here -->
+                </div>
+
+                <!-- Post Form -->
+                <form id="postForm">
+                    <div class="form-group">
+                        <label for="postContent">Post something:</label>
+                        <textarea class="form-control" id="postContent" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="postImage">Upload Image (optional):</label>
+                        <input type="file" class="form-control-file" id="postImage" accept="image/*">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Post</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Handle form submission
+            $("#postForm").submit(function (event) {
+                event.preventDefault();
+                var postContent = $("#postContent").val();
+                var postImage = $("#postImage")[0].files[0];
+
+                // Build the post HTML
+                var postHTML = '<div class="card mb-3">';
+                if (postImage) {
+                    postHTML += '<img src="' + URL.createObjectURL(postImage) + '" class="card-img-top" alt="Posted Image">';
+                }
+                postHTML += '<div class="card-body">' + postContent + '</div>';
+                postHTML += '<div class="card-footer">';
+                postHTML += '<form class="commentForm">';
+                postHTML += '<div class="form-group">';
+                postHTML += '<input type="text" class="form-control commentInput" placeholder="Add a comment">';
+                postHTML += '</div>';
+                postHTML += '<button type="submit" class="btn btn-secondary btn-sm">Comment</button>';
+                postHTML += '</form>';
+                postHTML += '</div></div>';
+
+                // Add the new post to the top of the list
+                $("#postList").prepend(postHTML);
+
+                // Clear the form
+                $("#postContent").val('');
+                $("#postImage").val('');
+            });
+
+            // Handle comment submission
+            $("#postList").on("submit", ".commentForm", function (event) {
+                event.preventDefault();
+                var commentInput = $(this).find(".commentInput");
+                var commentContent = commentInput.val();
+
+                // Add the new comment to the post
+                var commentHTML = '<div class="card-text"><strong>User:</strong> ' + commentContent + '</div>';
+                $(this).closest(".card").find(".card-body").append(commentHTML);
+
+                // Clear the comment input
+                commentInput.val('');
+            });
+        });
+    </script>
+
+</body>
+</html>
